@@ -1,38 +1,245 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Spartan', sans-serif;
+  font-size: 15px;
+  background-color: hsl(180, 52%, 96%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+hr {
+  background: hsl(180, 8%, 52%);
+  height: 1px;
+  border: 0px;
+  margin-top: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.background-container {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+  height: 156px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.background-mobile {
+  background: url("./images/bg-header-mobile.svg");
+  background-color: hsl(180, 29%, 50%);
+}
+
+.visible-container {
+  position: relative;
+  top: 136px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.container-box {
+  background-color: white;
+  border-radius: 5px;
+  margin: 20px 26px 20px 26px;
+}
+
+.filter {
+  padding: 10px 19px 10px 17px;
+  margin-bottom: -20px;
+  margin-top: -12px;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.display-none {
+  display: none;
+}
+
+.display {
+  display: flex;
+}
+
+.filter-list {
+  margin: 12px 0 12px 0;
+}
+
+.listbox-filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-boxes-filter-left {
+  display: inline;
+  background-color: hsl(180, 31%, 95%);
+  padding: 9px 8px 5px 8px;
+  border-radius: 3px 0px 0px 3px;
+  margin: 7px 0 17px 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: hsl(180, 29%, 50%);
+}
+
+.list-boxes-filter-right {
+  display: inline;
+  text-align: center;
+  background-color: hsl(180, 29%, 50%);
+  padding: 6px 7px 4px 7px;
+  border-radius: 0px 3px 3px 0px;
+  margin: 7px 12px 17px 0;
+  cursor: pointer;
+}
+
+.delete-img {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 1px;
+}
+
+.filter-col {
+  display: inline;
+}
+
+.clear-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0 auto -5;
+}
+
+.clear {
+  font-size: 12px;
+  font-weight: 700;
+  color: hsl(180, 8%, 52%);
+  cursor: pointer;
+}
+
+.card-standard {
+  padding: 40px 20px 5px 20px;
+  margin-bottom: -34px;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+}
+
+.card-featured {
+  border-left: 5px solid hsl(180, 29%, 50%);
+  padding: 40px 20px 5px 15px;
+  margin-bottom: -34px;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+}
+
+.logos {
+  width: 46px;
+  height: auto;
+  position: relative;
+  top: 48px;
+  left: 50px;
+}
+
+.firstline {
+  margin-bottom: 10px;
+}
+
+.company {
+  display: inline;
+  font-size: 12px;
+  font-weight: 700;
+  color: hsl(180, 29%, 50%);
+  margin-right: 10px;
+}
+
+.new-tag {
+  display: inline;
+  font-size: 10px;
+  font-weight: 700;
   color: white;
+  background-color: hsl(180, 29%, 50%);
+  padding: 6px 8px 4px 8px;
+  border-radius: 11px;
+  margin: 2px;
 }
 
-.App-link {
-  color: #61dafb;
+.featured-tag {
+  display: inline;
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  background-color: hsl(180, 14%, 20%);
+  padding: 6px 8px 4px 8px;
+  border-radius: 11px;
+  margin: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.bolder {
+  font-weight: 700;
+  padding: 2px;
+}
+
+.jobtitle {
+  font-weight: 700;
+  color: hsl(180, 14%, 20%);
+  font-size: 14px;
+}
+
+.listbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+
+.list-boxes {
+  display: inline;
+  background-color: hsl(180, 31%, 95%);
+  padding: 9px 8px 5px 8px;
+  border-radius: 3px;
+  margin: 7px 13px 7px 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: hsl(180, 29%, 50%);
+  cursor: pointer;
+}
+
+.thirdline-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: hsl(180, 8%, 52%);
+}
+
+
+
+.attribution {
+  font-size: 0.6rem;
+  text-align: center;
+
+  /* top: 105px; */
+}
+
+
+@media only screen and (min-width: 768px) {
+  .background-mobile {
+    background: url("./images/bg-header-desktop.svg");
+    background-color: hsl(180, 29%, 50%);
   }
 }
+
+/* - Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Desaturated Dark Cyan: hsl(180, 29%, 50%)
+
+### Neutral
+
+- Light Grayish Cyan (Background): hsl(180, 52%, 96%)
+- Light Grayish Cyan (Filter Tablets): hsl(180, 31%, 95%)
+- Dark Grayish Cyan: hsl(180, 8%, 52%)
+- Very Dark Grayish Cyan: hsl(180, 14%, 20%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 15px
+
+### Headings
+
+- Family: [Spartan](https://fonts.google.com/specimen/Spartan)
+- Weights: 500, 700 */
