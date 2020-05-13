@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = { data, clicked: false, filterList: [] }
+    this.state = { data, filteredData: data, clicked: false, filterList: [] }
     this.addFilter = this.addFilter.bind(this)
     this.clearFilter = this.clearFilter.bind(this)
     this.removeFilter = this.removeFilter.bind(this)
@@ -15,9 +15,28 @@ class App extends React.Component {
 
   addFilter = (e, el) => {
     e.preventDefault()
-    this.setState((prevState) => ({ filterList: [...prevState.filterList, el], clicked: true }))
 
-    console.log(this.state)
+    if (this.state.filterList.indexOf(el) === -1) {
+      let { filteredData } = this.state
+      function filterIt(arr, searchKey) {
+        return arr.filter(function (obj) {
+          return Object.keys(obj).some(function (key) {
+            return obj[key].includes(searchKey)
+          })
+        })
+      }
+
+      for (let i = 0; i < this.state.filterList.length; i++) {
+        console.log(
+          filteredData.filter(
+            (el) => el.role.includes(this.state.filterList[i]) || el.level.includes(this.state.filterList[i])
+          )
+        )
+      }
+      this.setState((prevState) => ({ filterList: [...prevState.filterList, el], clicked: true }))
+    }
+
+    //console.log(this.state.filteredData.filter((el) => el.role.includes(this.state.filterList)))
   }
 
   removeFilter = (e, el) => {
@@ -26,17 +45,17 @@ class App extends React.Component {
       ? this.setState((prevState) => ({
           filterList: prevState.filterList.filter((item) => item !== el),
           clicked: false,
+          filteredData: data,
         }))
       : this.setState((prevState) => ({ filterList: prevState.filterList.filter((item) => item !== el) }))
   }
 
   clearFilter = (e) => {
     e.preventDefault()
-    this.setState({ clicked: false, filterList: [] })
+    this.setState({ clicked: false, filterList: [], filteredData: data })
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="background-container background-mobile">
         <div className="visible-container">
@@ -44,11 +63,9 @@ class App extends React.Component {
             <div className="filter-col">
               <div className="listbox-filter">
                 {this.state.filterList.map((el, index) => (
-                  <div className="filter-list">
-                    <div className="list-boxes-filter-left" key={index}>
-                      {el}
-                    </div>
-                    <div className="list-boxes-filter-right" key={index}>
+                  <div key={index} className="filter-list">
+                    <div className="list-boxes-filter-left">{el}</div>
+                    <div className="list-boxes-filter-right">
                       <img
                         className="delete-img"
                         src={deleteImg}
@@ -67,7 +84,7 @@ class App extends React.Component {
             </div>
           </div>
 
-          {this.state.data.map((item, index) => (
+          {this.state.filteredData.map((item, index) => (
             <div key={index}>
               <img className="logos" src={`${item.logo}`} alt="company logo" />{' '}
               <div className={item.featured ? 'container-box card-featured' : 'container-box card-standard'}>
